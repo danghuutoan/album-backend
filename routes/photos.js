@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+
 router.get('/', (req, res) =>{
     res.send("photos");
 })
 
-router.post("/", (req, res) => {
+router.post("/list", (req, res) => {
     const photoList = {
         "message": "OK",
         "documents": [
