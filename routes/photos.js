@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+router.use('/', express.static('albums'));
 
 router.get('/', (req, res) =>{
     res.send("photos");
