@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Joi = require("joi");
 
+
 const photoSchema =  new mongoose.Schema({
     name: {
         type: String,

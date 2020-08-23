@@ -1,10 +1,11 @@
 const express = require('express');
-const { response } = require('express');
+
+
+
 const app = express();
 var cors = require('cors');
-app.use(cors());
-// app.use('/photos', express.static('albums'));
 
+app.use(cors());
 
 require("./startup/db")();
 require("./startup/routes")(app);

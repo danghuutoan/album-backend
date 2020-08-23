@@ -1,10 +1,47 @@
 const express = require('express');
 const router = express.Router();
+fs = require('fs').promises;
+const {Photo, validate} = require("../models/photos");
+const url = "http://localhost:8888";
+var multer = require('multer');
+const { nextTick } = require('process');
+var upload = multer();
 
 router.use('/', express.static('albums'));
 
-router.get('/', (req, res) =>{
+router.get('/', (req, res) => {
     res.send("photos");
+})
+
+router.put('/', upload.array("documents"),  async (req, res) => {
+    try {
+        const {album} = req.body; 
+
+        let data = await req.files.map(async (file) => {
+            let filePath = `albums/${album.toLowerCase()}/${file.originalname}`;
+            await fs.writeFile(filePath, file.buffer, "binary");
+            let photo = new Photo({
+                name: file.originalname,
+                path: `/${filePath}`,
+                album: album
+            });
+            
+            photo = await photo.save();
+            return { 
+                name: photo.name,
+                path: photo.path,
+                album: photo.album, 
+                raw: `${url}/photos/${album}/${file.originalname}`};
+        })
+        
+        res.send({
+            "message": "OK",
+            "data":  await Promise.all(data)
+        });
+
+    } catch (error) {
+        res.status(422).send("unprocessable");
+    }
 })
 
 router.post("/list", (req, res) => {
