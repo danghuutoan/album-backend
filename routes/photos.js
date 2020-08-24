@@ -91,4 +91,33 @@ router.delete("/:album/:fileName", async (req,res, next) => {
     
 })
 
+router.delete("/", async (req, res, next) => {
+    const albums = req.body;
+
+    const result = await albums.map(
+        async (album) => {
+            const deletedFiles = album.documents.split(",");
+            await deletedFiles.map(async (file) => {
+                try {
+                    let photo = await Photo.findOne({ album: album.album, name: file});
+                    if(photo.path) {
+                        await fs.unlink(`.${photo.path}`);
+                    }
+                } catch (error) {
+                    next(error);
+                }
+                
+            })
+            
+            try {
+                let photo = await Photo.deleteMany({album:album.album, name: {$in: deletedFiles}});
+            } catch (error) {
+                next(error);
+            }
+        })
+
+    Promise.all(result).then(() => {res.send({message: "OK"})});
+ 
+})
+
 module.exports = router;
