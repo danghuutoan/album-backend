@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-fs = require('fs').promises;
+const fs = require('fs').promises;
 const {Photo, validate} = require("../models/photos");
 const url = "http://localhost:8888";
-var multer = require('multer');
-const { nextTick } = require('process');
-const { message } = require('statuses');
-var upload = multer();
+const multer = require('multer');
+const upload = multer();
+
+const Joi = require("joi");
 
 router.use('/', express.static('albums'));
 
@@ -15,9 +15,17 @@ router.get('/', (req, res) => {
 })
 
 router.put('/', upload.array("documents"),  async (req, res, next) => {
-    try {
-        const {album} = req.body; 
+    const schema = Joi.object({
+        album: Joi.string().required()
+    })
 
+    const {error} = schema.validate(req.body);
+
+    if (error) return res.status(400).send('Invalid input.');
+
+    const {album} = req.body; 
+
+    try {
         let data = await req.files.map(async (file) => {
             let filePath = `/albums/${album.toLowerCase()}/${file.originalname}`;
             await fs.writeFile(`.${filePath}`, file.buffer, "binary");
@@ -46,11 +54,20 @@ router.put('/', upload.array("documents"),  async (req, res, next) => {
 })
 
 router.post("/list", async (req, res, next) => {
+    const {skip, limit} = req.body;
+    const schema = Joi.object({
+        skip: Joi.number().required(),
+        limit: Joi.number().required()
+    })
+
+    const {error} = schema.validate(req.body);
+
+    if (error) return res.status(400).send('Invalid input.');
+
     try {
-        const {body} = req;
         const count = await Photo.find().countDocuments();
 
-        let photos = await Photo.find().skip(body.skip).limit(body.limit);
+        let photos = await Photo.find().skip(skip).limit(limit);
         photos = await photos.map((photo) => {
             return {
                 id: photo.id,
@@ -64,8 +81,8 @@ router.post("/list", async (req, res, next) => {
             message: "OK",
             documents: photos,
             count: count,
-            skip: 0,
-            limit: body.limit
+            skip: skip,
+            limit: limit
         });
     } catch (error) {
         next(error);
@@ -75,6 +92,11 @@ router.post("/list", async (req, res, next) => {
 
 router.delete("/:album/:fileName", async (req,res, next) => {
     const {album, fileName} = req.params;
+    const schema = Joi.object({
+        album: Joi.string().required(),
+        fileName: Joi.string().required()
+    })
+
     try {
         let photo = await Photo.findOneAndDelete({ album: album, name: fileName});
         if(photo) {
@@ -93,31 +115,36 @@ router.delete("/:album/:fileName", async (req,res, next) => {
 
 router.delete("/", async (req, res, next) => {
     const albums = req.body;
+    const schema = Joi.array().items(Joi.object({
+        album: Joi.string().required(),
+        documents: Joi.string().required()
+    }))
+   
+    const {error} = schema.validate(albums);
+    if (error) return res.status(400).send('Invalid input.');
+    
+    let photos = [];
 
-    const result = await albums.map(
-        async (album) => {
-            const deletedFiles = album.documents.split(",");
-            await deletedFiles.map(async (file) => {
-                try {
-                    let photo = await Photo.findOne({ album: album.album, name: file});
-                    if(photo.path) {
-                        await fs.unlink(`.${photo.path}`);
-                    }
-                } catch (error) {
-                    next(error);
-                }
-                
-            })
-            
-            try {
-                let photo = await Photo.deleteMany({album:album.album, name: {$in: deletedFiles}});
-            } catch (error) {
-                next(error);
-            }
-        })
+    for(album of albums) {
+        albumName = album.album;
+        files = album.documents.split(",");
 
-    Promise.all(result).then(() => {res.send({message: "OK"})});
- 
+        for(file of files){
+                const photo = Photo
+                .findOneAndDelete({album: albumName, name: file}).select({path: 1})
+                .then((value) => {
+                    fs.unlink(`.${value.path}`);
+                });
+                photos.push(photo);
+        }
+    }
+
+    Promise.all(photos).then((values) => {
+        res.send({message: "OK"});
+    }).catch(e => {
+        next(e)
+    });
+
 })
 
 module.exports = router;
