@@ -1,0 +1,4 @@
+{
+    "name": "investax album - production",
+    "dbUrl": "mongodb://localhost/investax_album"
+}
