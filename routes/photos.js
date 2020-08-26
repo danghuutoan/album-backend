@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs').promises;
-const {delelePhoto, insertPhoto, getPaginatedPhoto, getPhotoCount} = require("../models/photos");
+const {delelePhoto, insertPhoto, getPaginatedPhoto, getPhotoCount, getDuplicateCount} = require("../models/photos");
 const config = require('config');
 const url = config.get('host');
 const multer = require('multer');
@@ -28,9 +28,21 @@ router.put('/', upload.array("documents"),  async (req, res, next) => {
 
     
     let data = await req.files.map(async (file) => {
-        let filePath = `/albums/${album.toLowerCase()}/${file.originalname}`;
+        let namePart = file.originalname.split('.');
+        const duplicateCount = await getDuplicateCount(album, file.originalname);
+        let fileName = '';
+        
+
+        if (duplicateCount > 0) {
+            fileName = `${namePart[0]}(${duplicateCount}).${namePart[1]}`;          
+        } else {
+            fileName = file.originalname;
+        }
+        
+        filePath = `/albums/${album.toLowerCase()}/${fileName}`;
+
         await fs.writeFile(`.${filePath}`, file.buffer, "binary");
-        return {...await insertPhoto(album, file.originalname, filePath), raw: `${url}/photos/${album}/${file.originalname}`};
+        return {...await insertPhoto(album, fileName, filePath), raw: `${url}/photos/${album}/${file.originalname}`};
     })
     
     Promise.all(data).then((results) => {
