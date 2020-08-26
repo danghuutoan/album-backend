@@ -1,4 +1,5 @@
 {
     "name": "investax album - production",
-    "dbUrl": "mongodb://localhost/investax_album"
+    "dbUrl": "mongodb://localhost/investax_album",
+    "host": "http://localhost:8888"
 }

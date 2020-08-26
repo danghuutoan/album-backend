@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs').promises;
 const {Photo, validate} = require("../models/photos");
-const url = "http://localhost:8888";
+const config = require('config');
+const url = config.get('host');
 const multer = require('multer');
 const upload = multer();
 
@@ -67,7 +68,7 @@ router.post("/list", async (req, res, next) => {
     try {
         const count = await Photo.find().countDocuments();
 
-        let photos = await Photo.find().skip(skip).limit(limit);
+        let photos = await Photo.find().skip(skip).limit(limit).select({album:1, name: 1, path: 1});
         photos = await photos.map((photo) => {
             return {
                 id: photo.id,
