@@ -35,6 +35,27 @@ function validatePhoto(photo) {
     
     return Joi.validate(photo, schema);
 }
+delelePhoto = async (album, fileName) => {
+    const photo = await Photo.findOneAndDelete({ album: album, name: fileName});
+    return photo;
+}
+
+insertPhoto = async (album, name, path) => {
+    let photo = new Photo({
+        name: name,
+        path: path,
+        album: album
+    });
+    
+    photo = await photo.save();
+    return { 
+        name: photo.name,
+        path: photo.path,
+        album: photo.album, 
+        };
+}
 
 exports.Photo = Photo;
 exports.validate = validatePhoto;
+exports.delelePhoto = delelePhoto;
+exports.insertPhoto = insertPhoto;

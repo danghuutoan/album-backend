@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs').promises;
-const {Photo, validate} = require("../models/photos");
+const {Photo,delelePhoto, insertPhoto} = require("../models/photos");
 const config = require('config');
 const url = config.get('host');
 const multer = require('multer');
@@ -26,32 +26,20 @@ router.put('/', upload.array("documents"),  async (req, res, next) => {
 
     const {album} = req.body; 
 
-    try {
-        let data = await req.files.map(async (file) => {
-            let filePath = `/albums/${album.toLowerCase()}/${file.originalname}`;
-            await fs.writeFile(`.${filePath}`, file.buffer, "binary");
-            let photo = new Photo({
-                name: file.originalname,
-                path: filePath,
-                album: album
-            });
-            
-            photo = await photo.save();
-            return { 
-                name: photo.name,
-                path: photo.path,
-                album: photo.album, 
-                raw: `${url}/photos/${album}/${file.originalname}`};
-        })
-        
+    
+    let data = await req.files.map(async (file) => {
+        let filePath = `/albums/${album.toLowerCase()}/${file.originalname}`;
+        await fs.writeFile(`.${filePath}`, file.buffer, "binary");
+        return {...await insertPhoto(album, file.originalname, filePath), raw: `${url}/photos/${album}/${file.originalname}`};
+    })
+    
+    Promise.all(data).then((results) => {
         res.send({
             "message": "OK",
-            "data":  await Promise.all(data)
+            "data":  results
         });
-
-    } catch (error) {
-        next(error);
-    }
+    })
+    
 })
 
 router.post("/list", async (req, res, next) => {
@@ -65,30 +53,26 @@ router.post("/list", async (req, res, next) => {
 
     if (error) return res.status(400).send('Invalid input.');
 
-    try {
-        const count = await Photo.find().countDocuments();
-
-        let photos = await Photo.find().skip(skip).limit(limit).select({album:1, name: 1, path: 1});
-        photos = await photos.map((photo) => {
-            return {
-                id: photo.id,
-                album: photo.album,
-                name: photo.name,
-                path: photo.path,
-                raw: `${url}/photos/${photo.album}/${photo.name}`};
-        })
-        
-        res.send({
-            message: "OK",
-            documents: photos,
-            count: count,
-            skip: skip,
-            limit: limit
-        });
-    } catch (error) {
-        next(error);
-    }
     
+    const count = await Photo.find().countDocuments();
+
+    let photos = await Photo.find().skip(skip).limit(limit).select({album:1, name: 1, path: 1});
+    photos = await photos.map((photo) => {
+        return {
+            id: photo.id,
+            album: photo.album,
+            name: photo.name,
+            path: photo.path,
+            raw: `${url}/photos/${photo.album}/${photo.name}`};
+    })
+    
+    res.send({
+        message: "OK",
+        documents: photos,
+        count: count,
+        skip: skip,
+        limit: limit
+    });
 })
 
 router.delete("/:album/:fileName", async (req,res, next) => {
@@ -98,20 +82,15 @@ router.delete("/:album/:fileName", async (req,res, next) => {
         fileName: Joi.string().required()
     })
 
-    try {
-        let photo = await Photo.findOneAndDelete({ album: album, name: fileName});
-        if(photo) {
-            await fs.unlink(`.${photo.path}`);
-            res.send({message: "OK"});
-        } else {
-            res.status(404).send({message: "Not Found"});
-        }
+    const photo = await delelePhoto(album, fileName);
 
-    } catch (error) {
-        next(error);
+    if (photo != null) {
+        return res.send({message: "OK"});
     }
-    
-    
+    else {
+        return res.status(404).send({message: "Not Found"});
+    }
+
 })
 
 router.delete("/", async (req, res, next) => {
@@ -124,28 +103,26 @@ router.delete("/", async (req, res, next) => {
     const {error} = schema.validate(albums);
     if (error) return res.status(400).send('Invalid input.');
     
-    let photos = [];
+    let photoPromises = [];
 
     for(album of albums) {
         albumName = album.album;
         files = album.documents.split(",");
 
         for(file of files){
-                const photo = Photo
-                .findOneAndDelete({album: albumName, name: file}).select({path: 1})
-                .then((value) => {
-                    fs.unlink(`.${value.path}`);
-                });
-                photos.push(photo);
+                const photo = await delelePhoto(albumName, file);
+                if (photo != null) {
+                    await fs.unlink(`.${photo.path}`);
+                }
+                photoPromises.push(photo);        
         }
     }
 
-    Promise.all(photos).then((values) => {
+    Promise.all(photoPromises).then((results) => {
         res.send({message: "OK"});
     }).catch(e => {
         next(e)
     });
-
 })
 
 module.exports = router;
