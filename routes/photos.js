@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs').promises;
-const {Photo,delelePhoto, insertPhoto} = require("../models/photos");
+const {delelePhoto, insertPhoto, getPaginatedPhoto, getPhotoCount} = require("../models/photos");
 const config = require('config');
 const url = config.get('host');
 const multer = require('multer');
@@ -54,9 +54,10 @@ router.post("/list", async (req, res, next) => {
     if (error) return res.status(400).send('Invalid input.');
 
     
-    const count = await Photo.find().countDocuments();
+    const count = await getPhotoCount();
 
-    let photos = await Photo.find().skip(skip).limit(limit).select({album:1, name: 1, path: 1});
+    let photos = await getPaginatedPhoto(skip, limit);
+    
     photos = await photos.map((photo) => {
         return {
             id: photo.id,

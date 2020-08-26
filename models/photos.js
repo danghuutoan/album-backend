@@ -35,6 +35,7 @@ function validatePhoto(photo) {
     
     return Joi.validate(photo, schema);
 }
+
 delelePhoto = async (album, fileName) => {
     const photo = await Photo.findOneAndDelete({ album: album, name: fileName});
     return photo;
@@ -55,7 +56,18 @@ insertPhoto = async (album, name, path) => {
         };
 }
 
+getPaginatedPhoto = async (skip, limit) => {
+    let photos = await Photo.find().skip(skip).limit(limit).select({album:1, name: 1, path: 1});
+    return photos;
+}
+
+getPhotoCount = async () => {
+    return await Photo.find().countDocuments();
+}
+
 exports.Photo = Photo;
 exports.validate = validatePhoto;
 exports.delelePhoto = delelePhoto;
 exports.insertPhoto = insertPhoto;
+exports.getPaginatedPhoto = getPaginatedPhoto;
+exports.getPhotoCount = getPhotoCount;
