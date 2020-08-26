@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 
 app.use(cors());
-
+require("./startup/log")();
 require("./startup/db")();
 require("./startup/routes")(app);
 
