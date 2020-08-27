@@ -73,6 +73,16 @@ getDuplicateCount = async (album, name) => {
     .countDocuments();
     return count;
 }
+
+createFileName = async (originalname, duplicateCount) => {
+    const namePart = originalname.split('.');
+    if (duplicateCount > 0) {
+        return `${namePart[0]}(${duplicateCount}).${namePart[1]}`;          
+    } else {
+        return originalname;
+    }
+}
+
 exports.Photo = Photo;
 exports.validate = validatePhoto;
 exports.delelePhoto = delelePhoto;
@@ -80,3 +90,4 @@ exports.insertPhoto = insertPhoto;
 exports.getPaginatedPhoto = getPaginatedPhoto;
 exports.getPhotoCount = getPhotoCount;
 exports.getDuplicateCount = getDuplicateCount;
+exports.createFileName = createFileName;
