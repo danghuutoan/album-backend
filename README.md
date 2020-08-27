@@ -46,4 +46,7 @@ by default, the development enviroment will be applied
     "host": "http://localhost:8888"
 }
 ```
+## Error logging
+
+all the errors will be recorded in file **logfile.log** using winston middleware
 
