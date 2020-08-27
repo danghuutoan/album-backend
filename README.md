@@ -21,7 +21,8 @@ npm install
 This will install all of the required packages we selected within the `package.json` file.
 
 ## Running the server
-Make sure that mongodb is up and running in your system
+From within the project root directory, run the below commands
+
 start MongoDB docker
 ```
 docker-compose up -d
@@ -31,7 +32,7 @@ export database configuration
 export DB_USER=root DB_PASSWORD=rootpassword
 ```
 
-From within the project root directory, run the below command
+start the webserver
 ```
 node index.js
 ```
