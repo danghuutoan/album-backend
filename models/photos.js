@@ -65,17 +65,13 @@ getPhotoCount = async () => {
     return await Photo.find().countDocuments();
 }
 
-getDuplicateName = async (album, name) => {
+getDuplicateCount = async (album, name) => {
     let parts = name.split('.')
     let pattern =  '^' + parts[0] + '\\(\\d+\\).' + parts[1];
     let count = await Photo.find()
     .or([{name: new RegExp(pattern), album: album}, {name: name, album, album}])
     .countDocuments();
-    if (count > 0) {
-        return `${parts[0]}(${count}).${parts[1]}`;          
-    } else {
-        return name;
-    }
+    return count;
 }
 exports.Photo = Photo;
 exports.validate = validatePhoto;
@@ -83,4 +79,4 @@ exports.delelePhoto = delelePhoto;
 exports.insertPhoto = insertPhoto;
 exports.getPaginatedPhoto = getPaginatedPhoto;
 exports.getPhotoCount = getPhotoCount;
-exports.getDuplicateName = getDuplicateName;
+exports.getDuplicateCount = getDuplicateCount;
