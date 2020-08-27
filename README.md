@@ -33,7 +33,8 @@ node index.js
 
 https://documenter.getpostman.com/view/10417219/Szzkcctu?version=latest
 
-url : http://localhost:8888
+## Project configs
+there are some specific configurations like hostname and database configuration often needed to be modified. 
 
 project url and database configuration can be modified in config files located at **config** directory
 
@@ -46,6 +47,8 @@ by default, the development enviroment will be applied
     "host": "http://localhost:8888"
 }
 ```
+
+changing deployed environment by changing NODE_ENV environment variable with the value of **production** or **development**
 ## Error logging
 
 all the errors will be recorded in file **logfile.log** using winston middleware
