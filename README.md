@@ -57,7 +57,7 @@ by default, the development enviroment will be applied
 }
 ```
 
-changing deployed environment by changing NODE_ENV environment variable with the value of **production** or **development**
+changing deployed environment by exporting NODE_ENV environment variable with the value of **production** or **development**
 ## Error logging
 
 all the errors will be recorded in file **logfile.log** using winston middleware
