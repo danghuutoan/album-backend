@@ -28,7 +28,6 @@ router.put('/', upload.array("documents"),  async (req, res, next) => {
 
     
     let data = await req.files.map(async (file) => {
-        // let namePart = file.originalname.split('.');
         const originalname = file.originalname;
         const duplicateCount = await getDuplicateCount(album, originalname);
         const fileName = await createFileName(originalname, duplicateCount);
