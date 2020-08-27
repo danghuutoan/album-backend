@@ -10,7 +10,6 @@ Follow instructions to install the latest version of node for your platform in t
 
 Follow instructions to install and run the latest version of mongodb for your platform in the [MongoDB docs](https://docs.mongodb.com/manual/installation/)
 
-
 #### npm Dependencies
 
 Once you have your node environment setup and running, install dependencies by navigating to the root directory and running:
@@ -23,9 +22,14 @@ This will install all of the required packages we selected within the `package.j
 
 ## Running the server
 Make sure that mongodb is up and running in your system
+start MongoDB docker
+```
+docker-compose up -d
+```
 
 From within the project root directory, run the below command
 ```
+export DB_USER=root DB_PASSWORD=rootpassword
 node index.js
 ```
 
