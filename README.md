@@ -35,7 +35,7 @@ https://documenter.getpostman.com/view/10417219/Szzkcctu?version=latest
 
 url : http://localhost:8888
 
-project url can be modified in config files located at **config** directory
+project url and database configuration can be modified in config files located at **config** directory
 
 by default, the development enviroment will be applied
 
