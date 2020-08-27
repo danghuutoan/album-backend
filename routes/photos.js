@@ -11,6 +11,10 @@ const Joi = require("joi");
 
 router.use('/', express.static('albums'));
 
+router.get('/', (req, res) => {
+    res.send("photos");
+})
+
 router.put('/', upload.array("documents"),  async (req, res, next) => {
     const schema = Joi.object({
         album: Joi.string().required()
@@ -25,20 +29,10 @@ router.put('/', upload.array("documents"),  async (req, res, next) => {
     
     let data = await req.files.map(async (file) => {
         let namePart = file.originalname.split('.');
-        const duplicateCount = await getDuplicateCount(album, file.originalname);
-        let fileName = '';
-        
-
-        if (duplicateCount > 0) {
-            fileName = `${namePart[0]}(${duplicateCount}).${namePart[1]}`;          
-        } else {
-            fileName = file.originalname;
-        }
-        
+        let fileName = await getDuplicateName(album, file.originalname);
         filePath = `/albums/${album.toLowerCase()}/${fileName}`;
-
         await fs.writeFile(`.${filePath}`, file.buffer, "binary");
-        return {...await insertPhoto(album, fileName, filePath), raw: `${url}/photos/${album}/${file.originalname}`};
+        return {...await insertPhoto(album, fileName, filePath), raw: `${url}/photos/${album}/${fileName}`};
     })
     
     Promise.all(data).then((results) => {
@@ -121,6 +115,7 @@ router.delete("/", async (req, res, next) => {
         for(file of files){
                 const photo = await delelePhoto(albumName, file);
                 if (photo != null) {
+                    console.log("delete " + photo.path);
                     await fs.unlink(`.${photo.path}`);
                 }
                 photoPromises.push(photo);        
@@ -128,6 +123,7 @@ router.delete("/", async (req, res, next) => {
     }
 
     Promise.all(photoPromises).then((results) => {
+        console.log(results);
         res.send({message: "OK"});
     }).catch(e => {
         next(e)
