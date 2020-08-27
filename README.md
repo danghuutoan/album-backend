@@ -7,9 +7,7 @@
 #### Node 
 Follow instructions to install the latest version of node for your platform in the [Node docs](https://nodejs.org/en/)
 #### MongoDB
-
-Follow instructions to install and run the latest version of mongodb for your platform in the [MongoDB docs](https://docs.mongodb.com/manual/installation/)
-the app is shipped with a docker container for MongoDB, all the configuration is stored in **docker-compose.yml**
+The app is shipped with a docker container for MongoDB, all the configuration is stored in **docker-compose.yml**
 #### npm Dependencies
 
 Once you have your node environment setup and running, install dependencies by navigating to the root directory and running:
@@ -57,7 +55,7 @@ by default, the development enviroment will be applied
 }
 ```
 
-changing deployed environment by changing NODE_ENV environment variable with the value of **production** or **development**
+changing deployed environment by exporting NODE_ENV environment variable with the value of **production** or **development**
 ## Error logging
 
 all the errors will be recorded in file **logfile.log** using winston middleware
