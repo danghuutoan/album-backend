@@ -74,6 +74,7 @@ getDuplicateCount = async (album, name) => {
     return count;
 }
 
+// adding sufix (duplicatecount) to the original name if there is any duplicate
 createFileName = async (originalname, duplicateCount) => {
     const namePart = originalname.split('.');
     if (duplicateCount > 0) {
