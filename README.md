@@ -51,7 +51,8 @@ by default, the development enviroment will be applied
 ```json
 {
     "name": "investax album - development",
-    "dbUrl": "mongodb://localhost/investax_album",
+    "dbUrl": "mongodb://localhost:27017",
+    "dbName": "investax_album",
     "host": "http://localhost:8888"
 }
 ```
