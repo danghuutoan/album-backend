@@ -32,7 +32,7 @@ export DB_USER=root DB_PASSWORD=rootpassword
 
 start the webserver
 ```
-node index.js
+npm start
 ```
 
 ## Api documentation

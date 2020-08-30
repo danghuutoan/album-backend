@@ -6,7 +6,6 @@ const config = require('config');
 const url = config.get('host');
 const multer = require('multer');
 const upload = multer();
-const async = require('async');
 const Joi = require("joi");
 
 router.use('/', express.static('albums'));
