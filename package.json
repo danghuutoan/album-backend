@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node ./index.js",
-    "test": "jest --testEnvironment=node --watchAll --verbose"
+    "test": "jest --testEnvironment=node --watchAll --verbose --runInBand --detectOpenHandles"
   },
   "dependencies": {
     "async": "^3.2.0",

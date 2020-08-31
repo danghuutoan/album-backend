@@ -2,7 +2,7 @@ const request = require('supertest');
 
 let server;
 
-describe('/photos/', () => {
+describe('/photos/list', () => {
     beforeEach(() => {
         server = require('../../index');
     });
@@ -10,8 +10,8 @@ describe('/photos/', () => {
         server.close();
     })
 
-    describe('GET /', () => {
-        it(' should return the status of the server', async () => {
+    describe('POST /photos/list', () => {
+        it(' should return the list of the available photos', async () => {
             const res = await request(server).get('/health');
             expect(res.status).toBe(200);
         })
