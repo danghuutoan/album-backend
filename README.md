@@ -61,6 +61,7 @@ changing deployed environment by exporting NODE_ENV environment variable with th
 all the errors will be recorded in file **logfile.log** using winston middleware
 
 ## Running tests
+all the tests are located at **./tests** folder
 
 run the below command for executing tests
 ```
