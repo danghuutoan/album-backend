@@ -1,5 +1,6 @@
 const request = require('supertest');
 const {Photo} = require("../../models/photos");
+const fs = require('fs');
 
 let server;
 let photos = [];
@@ -66,7 +67,7 @@ describe('/photos/list', () => {
             .put('/photos')
             .field("album", 'food')
             .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
-
+            
             expect(res.status).toBe(200);
             expect(res.body).toHaveProperty("message", "OK");
             expect(res.body).toHaveProperty("data");
@@ -74,6 +75,10 @@ describe('/photos/list', () => {
             expect(res.body.data[0]).toHaveProperty("album");
             expect(res.body.data[0]).toHaveProperty("name");
             expect(res.body.data[0]).toHaveProperty("path");
+            // check if the file is available in the file system after uploading
+            expect(fs.existsSync(`.${res.body.data[0].path}`, () => {})).toBeTruthy();
+            fs.unlink(`.${res.body.data[0].path}`, ()=> {});
+
             // removing uploaded photo after uploading
             const photo =  await Photo.findOne({name: res.body.data[0].name, album: res.body.data[0].album});
             if(photo) await photo.remove();
