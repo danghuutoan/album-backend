@@ -38,3 +38,9 @@
 {"errno":-2,"code":"ENOENT","syscall":"unlink","path":"./albums/personal/13.png","level":"error","message":"ENOENT: no such file or directory, unlink './albums/personal/13.png' ENOENT: no such file or directory, unlink './albums/personal/13.png'","stack":"Error: ENOENT: no such file or directory, unlink './albums/personal/13.png'"}
 {"errno":-2,"code":"ENOENT","syscall":"unlink","path":"./albums/personal/13.png","level":"error","message":"ENOENT: no such file or directory, unlink './albums/personal/13.png' ENOENT: no such file or directory, unlink './albums/personal/13.png'","stack":"Error: ENOENT: no such file or directory, unlink './albums/personal/13.png'"}
 {"errno":-2,"code":"ENOENT","syscall":"unlink","path":"./albums/personal/13.png","level":"error","message":"ENOENT: no such file or directory, unlink './albums/personal/13.png' ENOENT: no such file or directory, unlink './albums/personal/13.png'","stack":"Error: ENOENT: no such file or directory, unlink './albums/personal/13.png'"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}

@@ -1,6 +1,6 @@
 {
     "name": "investax album - development",
     "dbUrl": "mongodb://localhost:27017",
-    "dbName": "investax_album",
+    "dbName": "investax_album_tests",
     "host": "http://localhost:8888"
 }

@@ -19,7 +19,6 @@ app.use(error);
 
 
 const port = process.env.PORT || 8888;
-app.listen(port, () => {
-    console.log(config.get('name'));
-    console.log(`listening on port ${port}`)
-})
+const server = app.listen(port);
+
+module.exports = server;
