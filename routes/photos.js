@@ -11,9 +11,6 @@ const winston = require("winston");
 
 router.use('/', express.static('albums'));
 
-router.get('/', (req, res) => {
-    res.send("photos");
-})
 
 router.put('/', upload.array("documents"),  async (req, res, next) => {
     const schema = Joi.object({
