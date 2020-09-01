@@ -7,6 +7,7 @@ const url = config.get('host');
 const multer = require('multer');
 const upload = multer();
 const Joi = require("joi");
+const winston = require("winston");
 
 router.use('/', express.static('albums'));
 
@@ -110,7 +111,9 @@ router.delete("/", async (req, res, next) => {
 
     for(album of albums) {
         albumName = album.album;
-        files = album.documents.split(",");
+        files = album.documents.split(",").map(function(item) {
+            return item.trim();
+        });
 
         for(file of files){
                 const photo = await delelePhoto(albumName, file);

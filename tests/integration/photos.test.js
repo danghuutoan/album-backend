@@ -4,7 +4,7 @@ const fs = require('fs');
 
 let server;
 let photos = [];
-describe('/photos/list', () => {
+describe('/photos', () => {
     beforeEach(async () => {
         server = require('../../index');
         for (let i = 0; i < 10; i++) {
@@ -66,30 +66,129 @@ describe('/photos/list', () => {
             const res = await request(server)
             .put('/photos')
             .field("album", 'food')
+            .attach("documents", "./albumSource/food/ice-cream-cone-1274894_1280.jpg")
             .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
    
             expect(res.status).toBe(200);
             expect(res.body).toHaveProperty("message", "OK");
             expect(res.body).toHaveProperty("data");
-            expect(Array.isArray(res.body.data)).toBeTruthy();
-            expect(res.body.data[0]).toHaveProperty("album");
-            expect(res.body.data[0]).toHaveProperty("name");
-            expect(res.body.data[0]).toHaveProperty("path");
+            expect(Array.isArray(res.body.data)).toBeTruthy(); 
+            
+            for(const file of res.body.data) {
+                expect(file).toHaveProperty("album");
+                expect(file).toHaveProperty("name");
+                expect(file).toHaveProperty("path");
+                expect(fs.existsSync(`.${file.path}`, () => {})).toBeTruthy();
+                fs.unlink(`.${file.path}`, ()=> {});
+    
+                // removing uploaded photo after uploading
+                const photo =  await Photo.findOne({name: file.name, album: file.album});
+                if(photo) await photo.remove();
+            }
+           
             // check if the file is available in the file system after uploading
-            expect(fs.existsSync(`.${res.body.data[0].path}`, () => {})).toBeTruthy();
-            fs.unlink(`.${res.body.data[0].path}`, ()=> {});
-
-            // removing uploaded photo after uploading
-            const photo =  await Photo.findOne({name: res.body.data[0].name, album: res.body.data[0].album});
-            if(photo) await photo.remove();
+           
         })
 
-        it(" should return 400 if the request is invalid",  async () => {
-            // try sending a request without album field
-            const res = await request(server)
+        // it(" should return 400 if the request is invalid",  async () => {
+        //     // try sending a request without album field
+        //     const res = await request(server)
+        //     .put('/photos')
+        //     .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
+        //     expect(res.status).toBe(400);
+        // })
+    })
+
+    describe('DELETE /photos/:album/:name', () => {
+        it(" should return 200 if the request is valid",  async () => {
+            // upload a file
+            const album = "food";
+            const fileName = "ice-cream-cone-1274894_1280.jpg"
+            const uploadRes = await request(server)
             .put('/photos')
+            .field("album", album)
+            .attach("documents", `./albumSource/${album}/${fileName}`);
+            
+            expect(uploadRes.status).toBe(200);
+
+            const res = await request(server)
+            .delete('/photos/food/ice-cream-cone-1274894_1280.jpg');
+
+            expect(res.status).toBe(200);
+            Promise.all([res]).then(async(res) => {
+                const photo = await Photo.findOne({name: fileName, album: album});
+                expect(photo).toBe(null);
+            })
+        })
+
+        it(" should return 404 if the file is not found",  async () => {
+            const res = await request(server)
+            .delete('/photos/food/ice-cream-cone-1274894_12801.jpg');
+
+            expect(res.status).toBe(404);
+        })
+    })
+
+    describe('GET /photos/:album/:name', () => {
+        it(" should return 200 if the request is valid", async () => {
+            const album = "food";
+            const fileName = "ice-cream-cone-1274894_1280.jpg"
+            const uploadRes = await request(server)
+            .put('/photos')
+            .field("album", album)
+            .attach("documents", `./albumSource/${album}/${fileName}`);
+            
+            expect(uploadRes.status).toBe(200);
+
+            const res = await request(server)
+            .get('/photos/food/ice-cream-cone-1274894_1280.jpg');
+            
+            expect(res.status).toBe(200);
+            expect(Buffer.isBuffer(res.body)).toBeTruthy();
+   
+            expect(res.headers['content-type']).toMatch(/^image\/*/);
+
+            Promise.all([res]).then(async(res) => {
+                const photo = await Photo.findOne({name: fileName, album: album});
+                photo.remove();
+                fs.unlink(`.albums/${album}/${fileName}`, ()=> {});
+            })
+        })
+
+        it(" should return 404 if the file is not available", async () => {
+            const res = await request(server)
+            .get('/photos/food/unavailable_file.jpg');
+            
+            expect(res.status).toBe(404); 
+        })
+    })
+
+    describe('DELETE /photos', () => {
+        it(" should return 200 if the request is valid", async () => {
+            const files = ['ice-cream-cone-1274894_1280.jpg', 'coffee-2608864_1280.jpg'];
+            const uploadRes = await request(server)
+            .put('/photos')
+            .field("album", 'food')
+            .attach("documents", "./albumSource/food/ice-cream-cone-1274894_1280.jpg")
             .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
-            expect(res.status).toBe(400);
+   
+            expect(uploadRes.status).toBe(200);
+
+            const res = await request(server)
+            .delete('/photos')
+            .send([{
+                "album": "food",
+                "documents": "ice-cream-cone-1274894_1280.jpg, coffee-2608864_1280.jpg"
+            }]);
+
+            expect(res.status).toBe(200);
+
+            Promise.all([res]).then(async(res) => {
+                for(file of files) {
+                    expect(await Photo.findOne({name: file})).toBe(null);
+                }
+            })
+            
         })
     })
 })
