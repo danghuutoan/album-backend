@@ -67,7 +67,7 @@ describe('/photos/list', () => {
             .put('/photos')
             .field("album", 'food')
             .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
-            
+   
             expect(res.status).toBe(200);
             expect(res.body).toHaveProperty("message", "OK");
             expect(res.body).toHaveProperty("data");
@@ -89,7 +89,6 @@ describe('/photos/list', () => {
             const res = await request(server)
             .put('/photos')
             .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
-
             expect(res.status).toBe(400);
         })
     })

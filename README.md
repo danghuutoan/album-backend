@@ -20,7 +20,10 @@ This will install all of the required packages we selected within the `package.j
 
 ## Running the server
 From within the project root directory, run the below commands
-
+using development env
+```
+NODE_ENV=development
+```
 start MongoDB docker
 ```
 docker-compose up -d
@@ -65,5 +68,5 @@ all the tests are located at **./tests** folder
 
 run the below command for executing tests
 ```
-NODE_ENV=test npm test
+NODE_ENV=test DB_USER=root DB_PASSWORD=rootpassword npm test
 ```
