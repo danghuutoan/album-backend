@@ -401,3 +401,10 @@
 {"message":"connected to investax_album_tests","level":"info"}
 {"message":"connected to investax_album_tests","level":"info"}
 {"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album","level":"info"}
+{"message":[{"_id":"5f4e595992a7cc414b79abad","name":"fruit-2367029_1280.jpg","path":"/albums/food/fruit-2367029_1280.jpg","album":"Food","__v":0},{"_id":"5f4e595992a7cc414b79aba6","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"Food","__v":0}],"level":"info"}
+{"message":[{"_id":"5f4e595992a7cc414b79aba7","name":"background-2277_1280.webp","path":"/albums/food/background-2277_1280.webp","album":"Food","__v":0},{"_id":"5f4e595992a7cc414b79abaa","name":"ice-cream-cone-1274894_1280.jpg","path":"/albums/food/ice-cream-cone-1274894_1280.jpg","album":"Food","__v":0}],"level":"info"}
+{"message":"connected to investax_album","level":"info"}
+{"message":"connected to investax_album","level":"info"}
+{"level":"error","message":"dsfsdfdsfdsf dsfsdfdsfdsf","stack":"Error: dsfsdfdsfdsf\n    at delelePhoto (/Users/toan/study/album-backend/models/photos.js:41:11)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/toan/study/album-backend/routes/photos.js:116:31"}
+{"message":"connected to investax_album","level":"info"}

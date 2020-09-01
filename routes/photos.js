@@ -121,11 +121,10 @@ router.delete("/", async (req, res, next) => {
         }
     }
 
-    Promise.all(photoPromises).then((results) => {
+    Promise.all(photoPromises)
+    .then(() => {
         res.send({message: "OK"});
-    }).catch(e => {
-        next(e)
-    });
+    })
 })
 
 module.exports = router;
