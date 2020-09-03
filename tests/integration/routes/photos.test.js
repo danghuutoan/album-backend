@@ -143,6 +143,22 @@ describe('/photos', () => {
             .delete('/photos/food/ice-cream-cone-1274894_1280.jpg');
 
             expect(res.status).toBe(200);
+        })
+
+        it(" deleted file should be removed from the file system",  async () => {
+            // upload a file
+            const album = "food";
+            const fileName = "ice-cream-cone-1274894_1280.jpg"
+            const uploadRes = await request(server)
+            .put('/photos')
+            .field("album", album)
+            .attach("documents", `./albumSource/${album}/${fileName}`);
+            
+            expect(uploadRes.status).toBe(200);
+
+            const res = await request(server)
+            .delete('/photos/food/ice-cream-cone-1274894_1280.jpg');
+
             Promise.all([res]).then(async(res) => {
                 const photo = await Photo.findOne({name: fileName, album: album});
                 expect(photo).toBe(null);
@@ -203,6 +219,31 @@ describe('/photos', () => {
             }]);
 
             expect(res.status).toBe(200);
+
+            Promise.all([res]).then(async(res) => {
+                for(file of files) {
+                    expect(await Photo.findOne({name: file})).toBe(null);
+                }
+            })
+            
+        })
+
+        it(" deleted files should be removed from the file system", async () => {
+            const files = ['ice-cream-cone-1274894_1280.jpg', 'coffee-2608864_1280.jpg'];
+            const uploadRes = await request(server)
+            .put('/photos')
+            .field("album", 'food')
+            .attach("documents", "./albumSource/food/ice-cream-cone-1274894_1280.jpg")
+            .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
+   
+            expect(uploadRes.status).toBe(200);
+
+            const res = await request(server)
+            .delete('/photos')
+            .send([{
+                "album": "food",
+                "documents": "ice-cream-cone-1274894_1280.jpg, coffee-2608864_1280.jpg"
+            }]);
 
             Promise.all([res]).then(async(res) => {
                 for(file of files) {
