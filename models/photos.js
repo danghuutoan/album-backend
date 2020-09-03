@@ -57,7 +57,7 @@ class PhotoClass {
         .countDocuments();
     }
 
-    static async createFileName(originalname, duplicateCount) {
+    static createFileName(originalname, duplicateCount) {
         const namePart = originalname.split('.');
         if (duplicateCount > 0) {
             return `${namePart[0]}(${duplicateCount}).${namePart[1]}`;          
@@ -70,16 +70,5 @@ class PhotoClass {
 photoSchema.loadClass(PhotoClass);
 
 const Photo = mongoose.model('Photo', photoSchema);
-
-function validatePhoto(photo) {
-    const schema = {
-        name: Joi.string().min(5).max(255).required(),
-        path: Joi.string().min(5).max(255).required(),
-        album: Joi.string().min(1).max(50).required(),
-    }
-    
-    return Joi.validate(photo, schema);
-}
-
 
 module.exports = Photo;

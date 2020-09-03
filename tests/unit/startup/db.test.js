@@ -1,4 +1,4 @@
-const db = require("../../startup/db");
+const db = require("../../../startup/db");
 const mongoose = require('mongoose');
 const winston = require('winston');
 
@@ -7,7 +7,7 @@ describe('db startup ', () => {
         mongoose.connect = jest.fn().mockRejectedValue(new Error('failed to connected to mongodb'));
         winston.error = jest.fn();
         
-        await require("../../startup/db")();
+        await require("../../../startup/db")();
 
         expect(winston.error).toHaveBeenCalledWith("couldnot connect to MongoDB", new Error('failed to connected to mongodb'));    
     })
