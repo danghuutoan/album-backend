@@ -4,7 +4,7 @@ let server;
 
 describe('/health/', () => {
     beforeEach(() => {
-        server = require('../../index');
+        server = require('../../../index');
     });
     afterEach(() => {
         server.close();

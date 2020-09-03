@@ -1,12 +1,12 @@
 const request = require('supertest');
-const Photo = require("../../models/photos");
+const Photo = require("../../../models/photos");
 const fs = require('fs');
 
 let server;
 let photos = [];
 describe('/photos', () => {
     beforeEach(async () => {
-        server = require('../../index');
+        server = require('../../../index');
         for (let i = 0; i < 10; i++) {
             const photo = new Photo({name: `photo${i}`, album: `album${i}`, path: `path${i}`});
             await photo.save();
