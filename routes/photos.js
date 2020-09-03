@@ -29,6 +29,7 @@ router.put('/', upload.array("documents"),  async (req, res, next) => {
         const duplicateCount = await Photo.getDuplicateCount(album, originalname);
         const fileName = await Photo.createFileName(originalname, duplicateCount);
         const filePath = `/albums/${album.toLowerCase()}/${fileName}`
+        await fs.mkdir(`./albums/${album.toLowerCase()}`, { recursive: true });
         await fs.writeFile(`.${filePath}`, file.buffer, "binary");
         const photo = new Photo({album: album, name: fileName, path: `${filePath}`});
         

@@ -11,6 +11,7 @@ describe('/photos', () => {
     afterEach(async () => {
         server.close();
         await Photo.deleteMany({});
+        fs.rmdir('./albums', { recursive: true } ,()=> {})
     })
 
     describe('POST /photos/list', () => {
@@ -68,12 +69,10 @@ describe('/photos', () => {
             .put('/photos')
             .field("album", 'food')
             .attach("documents", "./albumSource/food/ice-cream-cone-1274894_1280.jpg")
-            .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
+            .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg")
+            .attach("documents", "./albumSource/food/raspberries-1426859_1280.jpg");
    
             expect(res.status).toBe(200);            
-            for(const file of res.body.data) {
-                fs.unlink(`.${file.path}`, ()=> {});
-            }
         })
 
         it(" should return list of uploaded files in the defined format",  async () => {
@@ -91,7 +90,6 @@ describe('/photos', () => {
                 expect(file).toHaveProperty("album");
                 expect(file).toHaveProperty("name");
                 expect(file).toHaveProperty("path");
-                fs.unlink(`.${file.path}`, ()=> {});
             }           
         })
     
@@ -105,7 +103,6 @@ describe('/photos', () => {
             for(const file of res.body.data) {
                 let photo = await Photo.findOne({name: file.name, album: file.album});
                 expect(photo).not.toBe(null);
-                fs.unlink(`.${file.path}`, ()=> {});
             }
         })
 
@@ -118,7 +115,6 @@ describe('/photos', () => {
                
             for(const file of res.body.data) {
                 expect(fs.existsSync(`.${file.path}`, () => {})).toBeTruthy();
-                fs.unlink(`.${file.path}`, ()=> {});
             }
         })
 
@@ -178,10 +174,6 @@ describe('/photos', () => {
             expect(Buffer.isBuffer(res.body)).toBeTruthy();
    
             expect(res.headers['content-type']).toMatch(/^image\/*/);
-
-            Promise.all([res]).then(async(res) => {
-                fs.unlink(`.albums/${album}/${fileName}`, ()=> {});
-            })
         })
 
         it(" should return 404 if the file is not available", async () => {
