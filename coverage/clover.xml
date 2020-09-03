@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1599115091538" clover="3.2.0">
-  <project timestamp="1599115091538" name="All files">
+<coverage generated="1599115256494" clover="3.2.0">
+  <project timestamp="1599115256494" name="All files">
     <metrics statements="126" coveredstatements="124" conditionals="16" coveredconditionals="16" methods="23" coveredmethods="22" elements="165" coveredelements="162" complexity="0" loc="126" ncloc="126" packages="5" files="8" classes="8"/>
     <package name="album-backend">
       <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
@@ -38,9 +38,9 @@
       <metrics statements="19" coveredstatements="19" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
       <file name="photos.js" path="/Users/toan/study/album-backend/models/photos.js">
         <metrics statements="19" coveredstatements="19" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
         <line num="28" count="8" type="stmt"/>
         <line num="32" count="15" type="stmt"/>
         <line num="33" count="15" type="stmt"/>
@@ -54,9 +54,9 @@
         <line num="62" count="16" type="cond" truecount="2" falsecount="0"/>
         <line num="63" count="1" type="stmt"/>
         <line num="65" count="15" type="stmt"/>
-        <line num="70" count="3" type="stmt"/>
-        <line num="72" count="3" type="stmt"/>
-        <line num="74" count="3" type="stmt"/>
+        <line num="70" count="4" type="stmt"/>
+        <line num="72" count="4" type="stmt"/>
+        <line num="74" count="4" type="stmt"/>
       </file>
     </package>
     <package name="album-backend.routes">
@@ -147,16 +147,16 @@
         <line num="2" count="4" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
         <line num="5" count="4" type="stmt"/>
-        <line num="6" count="6" type="stmt"/>
-        <line num="7" count="6" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
       <file name="log.js" path="/Users/toan/study/album-backend/startup/log.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
       </file>
       <file name="routes.js" path="/Users/toan/study/album-backend/startup/routes.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
