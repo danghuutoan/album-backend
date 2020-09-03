@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1599115256494" clover="3.2.0">
-  <project timestamp="1599115256494" name="All files">
+<coverage generated="1599150953955" clover="3.2.0">
+  <project timestamp="1599150953955" name="All files">
     <metrics statements="126" coveredstatements="124" conditionals="16" coveredconditionals="16" methods="23" coveredmethods="22" elements="165" coveredelements="162" complexity="0" loc="126" ncloc="126" packages="5" files="8" classes="8"/>
     <package name="album-backend">
       <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
@@ -45,7 +45,7 @@
         <line num="32" count="15" type="stmt"/>
         <line num="33" count="15" type="stmt"/>
         <line num="41" count="1" type="stmt"/>
-        <line num="45" count="14" type="stmt"/>
+        <line num="45" count="19" type="stmt"/>
         <line num="49" count="1" type="stmt"/>
         <line num="53" count="14" type="stmt"/>
         <line num="54" count="14" type="stmt"/>

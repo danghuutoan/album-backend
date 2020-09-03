@@ -68,7 +68,7 @@ router.post("/list", async (req, res, next) => {
             album: photo.album,
             name: photo.name,
             path: photo.path,
-            raw: `${url}/photos/${photo.album}/${photo.name}`};
+            raw: `${photo.getUrl(url)}`};
     })
     
     res.send({
