@@ -408,3 +408,315 @@
 {"message":"connected to investax_album","level":"info"}
 {"level":"error","message":"dsfsdfdsfdsf dsfsdfdsfdsf","stack":"Error: dsfsdfdsfdsf\n    at delelePhoto (/Users/toan/study/album-backend/models/photos.js:41:11)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/toan/study/album-backend/routes/photos.js:116:31"}
 {"message":"connected to investax_album","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":[{"_id":"5f4f05e47873be62343bcf81","name":"ice-cream-cone-1274894_1280.jpg","path":"/albums/food/ice-cream-cone-1274894_1280.jpg","album":"food","__v":0},{"_id":"5f4f05e47873be62343bcf82","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":[{"_id":"5f4f05f7f648886234af7055","name":"ice-cream-cone-1274894_1280.jpg","path":"/albums/food/ice-cream-cone-1274894_1280.jpg","album":"food","__v":0},{"_id":"5f4f05f7f648886234af7056","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":[null,null],"level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":[{"_id":"5f4f06e7374d8362347b4af3","name":"ice-cream-cone-1274894_1280.jpg","path":"/albums/food/ice-cream-cone-1274894_1280.jpg","album":"food","__v":0},{"_id":"5f4f06e7374d8362347b4af4","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":[null,{"_id":"5f4f06e7374d8362347b4b13","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"errno":-2,"code":"ENOENT","syscall":"unlink","path":".undefined","level":"error","message":"ENOENT: no such file or directory, unlink '.undefined' ENOENT: no such file or directory, unlink '.undefined'","stack":"Error: ENOENT: no such file or directory, unlink '.undefined'"}
+{"errno":-2,"code":"ENOENT","syscall":"unlink","path":".undefined","level":"error","message":"ENOENT: no such file or directory, unlink '.undefined' ENOENT: no such file or directory, unlink '.undefined'","stack":"Error: ENOENT: no such file or directory, unlink '.undefined'"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":[{"_id":"5f4f0865c7f05a6234d6b3fe","name":"ice-cream-cone-1274894_1280.jpg","path":"/albums/food/ice-cream-cone-1274894_1280.jpg","album":"food","__v":0},null],"level":"info"}
+{"message":[null,null],"level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":[{"_id":"5f4f096bc12ba562346d73da","name":"ice-cream-cone-1274894_1280.jpg","path":"/albums/food/ice-cream-cone-1274894_1280.jpg","album":"food","__v":0},null],"level":"info"}
+{"message":[null,null],"level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":[{"_id":"5f4f098264211562341bd22b","name":"ice-cream-cone-1274894_1280.jpg","path":"/albums/food/ice-cream-cone-1274894_1280.jpg","album":"food","__v":0},null],"level":"info"}
+{"message":[null,null],"level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":[{"_id":"5f4f09ce1ad26a62345fed08","name":"ice-cream-cone-1274894_1280.jpg","path":"/albums/food/ice-cream-cone-1274894_1280.jpg","album":"food","__v":0},{"_id":"5f4f09ce1ad26a62345fed09","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":[null,{"_id":"5f4f09cf1ad26a62345fed28","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":[{"_id":"5f4f09d9d26802623408d392","name":"ice-cream-cone-1274894_1280.jpg","path":"/albums/food/ice-cream-cone-1274894_1280.jpg","album":"food","__v":0},{"_id":"5f4f09d9d26802623408d393","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":[null,{"_id":"5f4f09d9d26802623408d3b2","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":[{"_id":"5f4fa9f09ec9ff623473eaa6","name":"ice-cream-cone-1274894_1280.jpg","path":"/albums/food/ice-cream-cone-1274894_1280.jpg","album":"food","__v":0},{"_id":"5f4fa9f09ec9ff623473eaa7","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":[null,{"_id":"5f4fa9f09ec9ff623473eac6","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":[{"_id":"5f4faa0df5f5366234d082ce","name":"ice-cream-cone-1274894_1280.jpg","path":"/albums/food/ice-cream-cone-1274894_1280.jpg","album":"food","__v":0},{"_id":"5f4faa0df5f5366234d082cf","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":[null,{"_id":"5f4faa0ef5f5366234d082ee","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":[{"_id":"5f4faa31879ad462344d737a","name":"ice-cream-cone-1274894_1280.jpg","path":"/albums/food/ice-cream-cone-1274894_1280.jpg","album":"food","__v":0},{"_id":"5f4faa31879ad462344d737b","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":[null,{"_id":"5f4faa31879ad462344d739a","name":"coffee-2608864_1280.jpg","path":"/albums/food/coffee-2608864_1280.jpg","album":"food","__v":0}],"level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"name":"MongoParseError","level":"error","message":"couldnot connect to MongoDB Invalid port (larger than 65535) with hostname","stack":"MongoParseError: Invalid port (larger than 65535) with hostname\n    at /Users/toan/study/album-backend/node_modules/mongodb/lib/core/uri_parser.js:662:28\n    at Array.map (<anonymous>)\n    at parseConnectionString (/Users/toan/study/album-backend/node_modules/mongodb/lib/core/uri_parser.js:633:6)\n    at connect (/Users/toan/study/album-backend/node_modules/mongodb/lib/operations/connect.js:282:3)\n    at /Users/toan/study/album-backend/node_modules/mongodb/lib/mongo_client.js:223:5\n    at maybePromise (/Users/toan/study/album-backend/node_modules/mongodb/lib/utils.js:662:3)\n    at MongoClient.connect (/Users/toan/study/album-backend/node_modules/mongodb/lib/mongo_client.js:219:10)\n    at /Users/toan/study/album-backend/node_modules/mongoose/lib/connection.js:788:12\n    at new Promise (<anonymous>)\n    at NativeConnection.Connection.openUri (/Users/toan/study/album-backend/node_modules/mongoose/lib/connection.js:785:19)\n    at Mongoose.connect (/Users/toan/study/album-backend/node_modules/mongoose/lib/index.js:339:15)\n    at module.exports (/Users/toan/study/album-backend/startup/db.js:7:14)\n    at Object.<anonymous> (/Users/toan/study/album-backend/index.js:15:1)\n    at Runtime._execModule (/Users/toan/study/album-backend/node_modules/jest-runtime/build/index.js:1217:24)\n    at Runtime._loadModule (/Users/toan/study/album-backend/node_modules/jest-runtime/build/index.js:828:12)\n    at Runtime.requireModule (/Users/toan/study/album-backend/node_modules/jest-runtime/build/index.js:679:10)"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"level":"error","message":"delelePhoto is not defined delelePhoto is not defined","stack":"ReferenceError: delelePhoto is not defined\n    at /Users/toan/study/album-backend/routes/photos.js:116:31\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:335:12)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:275:10)\n    at serveStatic (/Users/toan/study/album-backend/node_modules/serve-static/index.js:75:16)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:317:13)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:284:7\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:335:12)"}
+{"level":"error","message":"delelePhoto is not defined delelePhoto is not defined","stack":"ReferenceError: delelePhoto is not defined\n    at /Users/toan/study/album-backend/routes/photos.js:116:31\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:335:12)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:275:10)\n    at serveStatic (/Users/toan/study/album-backend/node_modules/serve-static/index.js:75:16)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:317:13)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:284:7\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:335:12)"}
+{"level":"error","message":"delelePhoto is not defined delelePhoto is not defined","stack":"ReferenceError: delelePhoto is not defined\n    at /Users/toan/study/album-backend/routes/photos.js:116:31\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:335:12)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:275:10)\n    at serveStatic (/Users/toan/study/album-backend/node_modules/serve-static/index.js:75:16)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:317:13)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:284:7\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:335:12)"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"level":"error","message":"Photo.deleleByName is not a function Photo.deleleByName is not a function","stack":"TypeError: Photo.deleleByName is not a function\n    at /Users/toan/study/album-backend/routes/photos.js:90:31\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:281:22\n    at param (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:354:14)\n    at param (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:365:14)\n    at param (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:365:14)\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:410:3)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:275:10)\n    at serveStatic (/Users/toan/study/album-backend/node_modules/serve-static/index.js:75:16)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)"}
+{"level":"error","message":"Photo.deleleByName is not a function Photo.deleleByName is not a function","stack":"TypeError: Photo.deleleByName is not a function\n    at /Users/toan/study/album-backend/routes/photos.js:90:31\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:281:22\n    at param (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:354:14)\n    at param (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:365:14)\n    at param (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:365:14)\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:410:3)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:275:10)\n    at serveStatic (/Users/toan/study/album-backend/node_modules/serve-static/index.js:75:16)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)"}
+{"level":"error","message":"Photo.deleleByName is not a function Photo.deleleByName is not a function","stack":"TypeError: Photo.deleleByName is not a function\n    at /Users/toan/study/album-backend/routes/photos.js:120:43\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:335:12)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:275:10)\n    at serveStatic (/Users/toan/study/album-backend/node_modules/serve-static/index.js:75:16)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:317:13)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:284:7\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:335:12)"}
+{"level":"error","message":"Photo.deleleByName is not a function Photo.deleleByName is not a function","stack":"TypeError: Photo.deleleByName is not a function\n    at /Users/toan/study/album-backend/routes/photos.js:120:43\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:335:12)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:275:10)\n    at serveStatic (/Users/toan/study/album-backend/node_modules/serve-static/index.js:75:16)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:317:13)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:284:7\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:335:12)"}
+{"level":"error","message":"Photo.deleleByName is not a function Photo.deleleByName is not a function","stack":"TypeError: Photo.deleleByName is not a function\n    at /Users/toan/study/album-backend/routes/photos.js:120:43\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/Users/toan/study/album-backend/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:335:12)\n    at next (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:275:10)\n    at serveStatic (/Users/toan/study/album-backend/node_modules/serve-static/index.js:75:16)\n    at newFn (/Users/toan/study/album-backend/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/Users/toan/study/album-backend/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:317:13)\n    at /Users/toan/study/album-backend/node_modules/express/lib/router/index.js:284:7\n    at Function.process_params (/Users/toan/study/album-backend/node_modules/express/lib/router/index.js:335:12)"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album","level":"info"}
+{"message":"connected to investax_album","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}
+{"message":"connected to investax_album_tests","level":"info"}

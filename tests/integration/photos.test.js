@@ -1,5 +1,5 @@
 const request = require('supertest');
-const {Photo} = require("../../models/photos");
+const Photo = require("../../models/photos");
 const fs = require('fs');
 
 let server;
@@ -69,7 +69,25 @@ describe('/photos', () => {
             .attach("documents", "./albumSource/food/ice-cream-cone-1274894_1280.jpg")
             .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
    
-            expect(res.status).toBe(200);
+            expect(res.status).toBe(200);            
+            for(const file of res.body.data) {
+                fs.unlink(`.${file.path}`, ()=> {});
+    
+                // removing uploaded photo after uploading
+                await Photo.findOneAndDelete({name: file.name, album: file.album});
+            }
+           
+            // check if the file is available in the file system after uploading
+           
+        })
+
+        it(" should return list of uploaded files in the defined format",  async () => {
+            const res = await request(server)
+            .put('/photos')
+            .field("album", 'food')
+            .attach("documents", "./albumSource/food/ice-cream-cone-1274894_1280.jpg")
+            .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
+   
             expect(res.body).toHaveProperty("message", "OK");
             expect(res.body).toHaveProperty("data");
             expect(Array.isArray(res.body.data)).toBeTruthy(); 
@@ -78,25 +96,60 @@ describe('/photos', () => {
                 expect(file).toHaveProperty("album");
                 expect(file).toHaveProperty("name");
                 expect(file).toHaveProperty("path");
-                expect(fs.existsSync(`.${file.path}`, () => {})).toBeTruthy();
                 fs.unlink(`.${file.path}`, ()=> {});
     
                 // removing uploaded photo after uploading
-                const photo =  await Photo.findOne({name: file.name, album: file.album});
-                if(photo) await photo.remove();
+                await Photo.findOneAndDelete({name: file.name, album: file.album});
             }
            
             // check if the file is available in the file system after uploading
            
         })
+    
+        it(" the uploaded file must be available in database after uploading ",  async () => {
+            const res = await request(server)
+            .put('/photos')
+            .field("album", 'food')
+            .attach("documents", "./albumSource/food/ice-cream-cone-1274894_1280.jpg")
+            .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
+   
 
-        // it(" should return 400 if the request is invalid",  async () => {
-        //     // try sending a request without album field
-        //     const res = await request(server)
-        //     .put('/photos')
-        //     .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
-        //     expect(res.status).toBe(400);
-        // })
+            
+            for(const file of res.body.data) {
+                let photo = await Photo.findOne({name: file.name, album: file.album});
+                expect(photo).not.toBe(null);
+
+                fs.unlink(`.${file.path}`, ()=> {});
+                // removing uploaded photo after uploading
+                await Photo.findOneAndDelete({name: file.name, album: file.album});
+            }
+        })
+
+        it(" the uploaded file must be available in the filesystem after uploading ",  async () => {
+            const res = await request(server)
+            .put('/photos')
+            .field("album", 'food')
+            .attach("documents", "./albumSource/food/ice-cream-cone-1274894_1280.jpg")
+            .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
+   
+
+            
+            for(const file of res.body.data) {
+                expect(fs.existsSync(`.${file.path}`, () => {})).toBeTruthy();
+                fs.unlink(`.${file.path}`, ()=> {});
+    
+                // removing uploaded photo after uploading
+                await Photo.findOneAndDelete({name: file.name, album: file.album});
+            }
+        })
+
+        it(" should return 400 if the request is invalid",  async () => {
+            // try sending a request without album field
+            const res = await request(server)
+            .put('/photos')
+            .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
+            expect(res.status).toBe(400);
+        })
     })
 
     describe('DELETE /photos/:album/:name', () => {
@@ -190,5 +243,60 @@ describe('/photos', () => {
             })
             
         })
+
+
+        it(" should return 400 if the request is valid (no documents field)", async () => { 
+            const res = await request(server)
+            .delete('/photos')
+            .send([{
+                "album": "food",
+            }]);
+
+            expect(res.status).toBe(400);
+        });
+
+        it(" should return 400 if the request is valid (no album field)", async () => { 
+            const res = await request(server)
+            .delete('/photos')
+            .send([{
+                "documents": "ice-cream-cone-1274894_1280.jpg, coffee-2608864_1280.jpg"
+            }]);
+
+            expect(res.status).toBe(400);
+        });
+
+        it(" should return 404 if file is not available", async () => { 
+            const uploadRes = await request(server)
+            .put('/photos')
+            .field("album", 'food')
+            .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
+   
+            expect(uploadRes.status).toBe(200);
+
+            const res = await request(server)
+            .delete('/photos')
+            .send([{
+                "album": "food",
+                "documents": "notfound1.jpg, coffee-2608864_1280.jpg"
+            }]);
+            expect(res.status).toBe(404);
+        });
+
+        it(" should return the list of files which could not be deleted", async () => { 
+            const uploadRes = await request(server)
+            .put('/photos')
+            .field("album", 'food')
+            .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
+   
+            expect(uploadRes.status).toBe(200);
+
+            const res = await request(server)
+            .delete('/photos')
+            .send([{
+                "album": "food",
+                "documents": "notfound1.jpg, coffee-2608864_1280.jpg"
+            }]);
+            expect(res.body).toHaveProperty("failed", ["notfound1.jpg"]);
+        });
     })
 })
