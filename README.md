@@ -22,20 +22,15 @@ This will install all of the required packages we selected within the `package.j
 From within the project root directory, run the below commands
 using development env
 ```
-NODE_ENV=development
+
 ```
 start MongoDB docker
 ```
 docker-compose up -d
 ```
-export database configuration
+start server
 ```
-export DB_USER=root DB_PASSWORD=rootpassword
-```
-
-start the webserver
-```
-npm start
+NODE_ENV=development DB_USER=root DB_PASSWORD=rootpassword npm start
 ```
 
 ## Api documentation

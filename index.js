@@ -5,6 +5,7 @@ const cors = require('cors');
 const config = require('config');
 const error = require("./middleware/error");
 
+
 const app = express();
 app.use(bodyParser.json());
 
