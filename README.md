@@ -32,6 +32,7 @@ start server
 ```
 NODE_ENV=development DB_USER=root DB_PASSWORD=rootpassword npm start
 ```
+production url https://investax-album-backend.herokuapp.com/
 
 ## Api documentation
 
