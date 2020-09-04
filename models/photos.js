@@ -42,7 +42,7 @@ class PhotoClass {
     }
 
     getUrl(hostname) {
-        return `${hostname}/photos/${this.album}/${this.name}`;
+        return `${hostname}/photos/${this.album.toLowerCase()}/${this.name}`;
     }
 
     static getCount() {
