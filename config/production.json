@@ -1,6 +1,6 @@
 {
-    "name": "investax album - development",
-    "dbUrl": "mongodb://localhost:27017",
+    "name": "investax album - production",
+    "dbUrl": "mongodb+srv://cluster0.q9ljz.mongodb.net",
     "dbName": "investax_album",
-    "host": "http://localhost:8888"
+    "host": "https://investax-album-backend.herokuapp.com"
 }
