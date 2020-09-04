@@ -127,6 +127,38 @@ describe('/photos', () => {
         })
     })
 
+    describe('GET /photos/:album/:filename', () => {
+        beforeEach(async () => {
+            await request(server)
+            .put('/photos')
+            .field("album", 'food')
+            .attach("documents", "./albumSource/food/coffee-2608864_1280.jpg");
+        })
+
+        it(" should return 404 if the requested file is not available",  async () => {
+            const res = await request(server)
+            .get('/photos/food/not-available.jpg');
+            expect(res.status).toBe(404);
+        })
+
+        it(" should return 200 if the requested file is available",  async () => {
+            const res = await request(server)
+            .get('/photos/food/coffee-2608864_1280.jpg');
+            expect(res.status).toBe(200);
+        })
+
+        it("the received file must be the same with the uploaded",  async () => {
+            const res = await request(server)
+            .get('/photos/food/coffee-2608864_1280.jpg');
+            
+            
+            expect(res.status).toBe(200);
+            const received = res.body;
+            const uploaded = await fs.promises.readFile("./albumSource/food/coffee-2608864_1280.jpg");
+            expect(uploaded.equals(received)).toBeTruthy();
+        })
+    })
+
     describe('DELETE /photos/:album/:name', () => {
         it(" should return 200 if the request is valid",  async () => {
             // upload a file
